@@ -1,9 +1,7 @@
 <template>
-  <div class="App">
-    <h1> defineComponent </h1>
-    <div style="height:520px">
-      <coreChart></coreChart>
-    </div>
+  <div class="app_container">
+    <!-- <h1> defineComponent </h1> -->
+    <coreChart></coreChart>
   </div>
 </template>
 

@@ -1,16 +1,56 @@
 
 <script>
 
-import { useChart } from '@/hook/useChart'
-import { h, ref, defineComponent, onMounted } from 'vue'
+import { h, ref, defineComponent, onMounted, onBeforeUnmount } from 'vue'
+import { useEventListener, useDebounceFn } from '@vueuse/core'
+
 export default defineComponent({
   props: {
-
+    option: {
+      type: Object,
+      default: () => ({})
+    }
   },
-  setup (props, ctx) {
+  setup (props, { expose }) {
     const chartRef = ref(null)
+    const { echarts } = window
+    if (!echarts) return
+    let chart = null
+
+    function initChart (dom, option) {
+      const _chart = echarts.init(dom, null, { })
+      _chart.setOption(option)
+      return _chart
+    }
+
+    function setOption (option = {}) {
+      chart && chart.setOption(option || {}, true)
+    }
+
+    function resize () {
+      console.log('resize')
+      chart && chart.resize()
+    }
+
+    function dispose () {
+      console.log('dispose')
+      chart && chart.dispose()
+    }
+
+    // 销毁之前
+    onBeforeUnmount(() => {
+      console.log('销毁之前')
+      dispose()
+    })
+
+    const debouncedFn = useDebounceFn(() => {
+      resize()
+    }, 400)
+
+    useEventListener(window, 'resize', debouncedFn)
+
     onMounted(() => {
-      const { setOption } = useChart(chartRef.value)
+      chart = initChart(chartRef.value, props.option)
 
       const option = {
         // grid: { top: 35, left: 15, right: 15, bottom: 15, containLabel: true },
@@ -135,6 +175,11 @@ export default defineComponent({
       setOption(option)
     })
 
+    expose({
+      resize,
+      dispose,
+      setOption
+    })
     return () => h('div', {
       ref: chartRef,
       class: 'datav_core_chart'

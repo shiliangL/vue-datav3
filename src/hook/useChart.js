@@ -21,6 +21,11 @@ export function useChart (dom, option = {}, opt = {}) {
     chart && chart.resize()
   }
 
+  function dispose () {
+    console.log('dispose')
+    chart && chart.dispose()
+  }
+
   // 销毁之前
   onBeforeUnmount(() => {
     console.log('销毁之前')
@@ -36,7 +41,8 @@ export function useChart (dom, option = {}, opt = {}) {
   return {
     chart,
     resize,
-    initChart,
-    setOption
+    dispose,
+    setOption,
+    initChart
   }
 }
