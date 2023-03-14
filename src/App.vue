@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="App">
     <h1> defineComponent </h1>
   </div>
 </template>
@@ -14,5 +14,11 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+.App{
+  h1{
+    font-size: 32px;
+    color: yellowgreen;
+  }
+}
 </style>

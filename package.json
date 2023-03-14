@@ -10,10 +10,13 @@
         "lint:create": "eslint --init"
     },
     "dependencies": {
-        "vue": "^3.2.45"
+        "pinia": "^2.0.33",
+        "vue": "^3.2.45",
+        "vue-router": "4"
     },
     "devDependencies": {
         "@vitejs/plugin-vue": "^4.0.0",
+        "@vitejs/plugin-vue-jsx": "^3.0.0",
         "@vueuse/core": "^9.13.0",
         "eslint": "^8.0.1",
         "eslint-config-standard": "^17.0.0",
@@ -22,6 +25,7 @@
         "eslint-plugin-promise": "^6.0.0",
         "eslint-plugin-vue": "^9.9.0",
         "normalize.css": "^8.0.1",
+        "sass": "^1.59.2",
         "vite": "^4.1.0",
         "vite-plugin-eslint": "^1.8.1"
     }
