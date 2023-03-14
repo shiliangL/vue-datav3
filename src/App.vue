@@ -54,8 +54,8 @@ export default defineComponent({
   overflow: auto;
   grid-row-gap: 20px;
   grid-column-gap: 20px;
-  grid-auto-rows: minmax(310px, auto);
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  grid-auto-rows: minmax(250px, auto);
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
 
   .grid_card_list_item {
     display: flex;
