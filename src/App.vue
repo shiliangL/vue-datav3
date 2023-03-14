@@ -12,7 +12,7 @@
             class="preview_btn"
             target="_blank"
             href="#/preview"
-          >查看详情</a>
+          >查看配置</a>
         </div>
         <div class="template_badge">
           <span>企业版</span>
