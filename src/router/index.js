@@ -2,9 +2,6 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 const Login = () =>
   import('@/views/system/login.vue')
-const Personal = () =>
-  import('@/views/system/personal.vue')
-
 const Layout = () =>
   import('@/views/layout/index.vue')
 
@@ -41,7 +38,6 @@ const routes = [
     ]
   },
   { path: '/login', name: 'login', component: Login },
-  { path: '/personal', name: 'personal', component: Personal },
   {
     path: '/404',
     name: '404',
