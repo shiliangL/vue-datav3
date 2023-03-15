@@ -1,20 +1,17 @@
-import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-
-const pathResolve = (dir) => {
-  return resolve(__dirname, '.', dir)
-}
+import { resolve } from 'path'
+const pathResolve = (dir) => resolve(__dirname, dir)
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: './',
+  base: '/',
   plugins: [
     vue()
   ],
   resolve: {
     alias: {
-      '@': pathResolve('src')
+      '@': pathResolve('./src')
     }
   },
   server: {
