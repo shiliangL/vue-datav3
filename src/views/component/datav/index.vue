@@ -1,10 +1,14 @@
 <template>
   <div>
     可视化
+    <div class="chart_3d">
+      <coreChart class="chart"></coreChart>
+    </div>
   </div>
 </template>
 
-<script lang="ts">
+<script>
+
 import { defineComponent } from 'vue'
 
 export default defineComponent({
@@ -14,5 +18,10 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+
+.chart_3d{
+  width: 360px;
+  height: 320px;
+}
 </style>

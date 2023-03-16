@@ -25,12 +25,8 @@
 <script>
 
 import { defineComponent } from 'vue'
-import coreChart from '@/datav/coreChart/index.vue'
 
 export default defineComponent({
-  components: {
-    coreChart
-  },
   setup () {
     return {
 

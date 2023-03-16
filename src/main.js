@@ -4,4 +4,7 @@ import App from './App.vue'
 
 import route from '@/router/index'
 
-createApp(App).use(route).mount('#app')
+// 使用全局组件
+import Datav from '@/datav/index'
+
+createApp(App).use(route).use(Datav).mount('#app')

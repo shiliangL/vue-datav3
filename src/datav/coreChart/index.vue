@@ -5,6 +5,7 @@ import { h, ref, defineComponent, onMounted, onBeforeUnmount } from 'vue'
 import { useEventListener, useDebounceFn } from '@vueuse/core'
 
 export default defineComponent({
+  name: 'CoreChart',
   props: {
     option: {
       type: Object,

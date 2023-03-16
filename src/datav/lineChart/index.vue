@@ -1,6 +1,6 @@
 
 <script>
-import { h, defineComponent } from '@vue/composition-api'
+import { h, defineComponent } from 'vue'
 export default defineComponent({
   setup () {
     return () => h('div', {
