@@ -41,7 +41,7 @@ const routes = [
     ]
   },
   // TODO: 自动装载的路由
-  AutoRouter,
+  // AutoRouter,
   {
     path: '/login',
     name: 'login',
