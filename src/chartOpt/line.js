@@ -12,7 +12,7 @@ export const chartOpt1 = {
     top: '12%',
     left: '6%',
     right: '6%',
-    bottom: '10%',
+    bottom: '12%',
     containLabel: true
   },
   tooltip: {
@@ -321,7 +321,7 @@ export const chartOpt2 = {
     top: '12%',
     left: '6%',
     right: '6%',
-    bottom: '10%',
+    bottom: '12%',
     containLabel: true
   },
   tooltip: {

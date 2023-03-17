@@ -1,11 +1,20 @@
 <template>
   <div class="datav_list">
     可视化 ?????
-    <div class="chart_3d">
-      <coreChart :option="option" class="chart"></coreChart>
-    </div>
-    <div class="chart_3d">
-      <coreChart :option="chartOpt2" class="chart"></coreChart>
+
+    <div class="grid_list">
+      <div class="grid_list_item">
+        <coreChart
+          :option="option"
+          class="chart"
+        ></coreChart>
+      </div>
+      <div class="grid_list_item">
+        <coreChart
+          :option="chartOpt2"
+          class="chart"
+        ></coreChart>
+      </div>
     </div>
   </div>
 </template>
@@ -32,12 +41,19 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-.datav_list{
+
+.grid_list {
+  --transition35: all 0.35s ease-in-out;
   display: grid;
-}
-.chart_3d{
-  width: 360px;
-  height: 320px;
+  padding: 20px;
+  overflow: auto;
+  grid-row-gap: 20px;
+  grid-column-gap: 20px;
+  grid-auto-rows: minmax(250px, auto);
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+
+.grid_list_item {
   border: 1px solid #7d7d7d;
+}
 }
 </style>
