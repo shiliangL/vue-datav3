@@ -1,19 +1,28 @@
 <template>
   <div class="App_Layout">
-    <nav>
-      <router-link to="/"> dashboard </router-link>
-      <router-link to="/component/chart"> chart </router-link>
-      <router-link to="/component/datav"> datav </router-link>
-    </nav>
-    <div>
-      <router-view></router-view>
+    <HeaderBar></HeaderBar>
+    <div class="App_Layout_Main">
+      <router-view v-slot="{ Component }">
+        <Transition
+          enter-active-class="animate__animated animate__slideInLeft"
+          leave-active-class="animate__animated animate__slideOutRight"
+        >
+          <component :is="Component" />
+        </Transition>
+      </router-view>
     </div>
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script>
+
+import HeaderBar from './header.vue'
+import { defineComponent, Transition } from 'vue'
 export default defineComponent({
+  components: {
+    HeaderBar,
+    Transition
+  },
   setup () {
     return {}
   }
