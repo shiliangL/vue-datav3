@@ -15,13 +15,15 @@ function createPanel ({ title, message, confirmBtnText, cancelBtnText }) {
       },
       onCancel: () => {
         unmount()
-        reject(new Error())
+        // reject(new Error())
       }
     })
     // 卸载组件
     const unmount = () => {
       instance.unmount()
-      document.body.removeChild(parentNode)
+      // setTimeout(() => {
+      //   document.body.removeChild(parentNode)
+      // }, 200)
     }
     // 创建一个挂载容器
     const parentNode = document.createElement('div')
