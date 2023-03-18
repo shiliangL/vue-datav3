@@ -1472,176 +1472,176 @@ export const chartOpt4 = {
   ]
 }
 
-export const chartOpt5 = {
-  desc: '3d立体饼图',
-  grid,
-  color,
-  barBackground: 'RGBA(235, 238, 245, 0.06)',
-  backgroundColor: 'transparent',
-  animation: true,
-  animationEasing: 'elasticOut',
-  animationDelayUpdate: (k) => 5 * k,
-  animationDelay: (idx) => idx * 10,
-  legend: {
-    type: 'scroll',
-    data: [
-      '早早早  160',
-      '中中中  244',
-      '晚晚晚  332'
-    ],
-    icon: 'roundRect',
-    padding: 5,
-    itemGap: 20,
-    bottom: 0,
-    itemWidth: 10,
-    itemHeight: 10,
-    selectedMode: true,
-    textStyle: {
-      color: '#FFFFFF',
-      fontSize: 14,
-      lineHeight: 14,
-      rich: {
-        a: {
-          verticalAlign: 'middle'
-        }
-      },
-      padding: [
-        0,
-        0, -3,
-        0
-      ]
-    }
-  },
-  tooltip: {},
-  xAxis3D: {
-    min: -1,
-    max: 1
-  },
-  yAxis3D: {
-    min: -1,
-    max: 1
-  },
-  zAxis3D: {
-    min: -1,
-    max: 'dataMax'
-  },
-  grid3D: {
-    show: false,
-    boxHeight: 16,
-    top: '-18%',
-    viewControl: {
-      alpha: 27,
-      beta: 70,
-      rotateSensitivity: 1,
-      zoomSensitivity: 0,
-      panSensitivity: 0,
-      distance: 150
-    },
-    postEffect: {
-      enable: false,
-      bloom: {
-        enable: true,
-        bloomIntensity: 0.1
-      },
-      SSAO: {
-        enable: true,
-        quality: 'medium',
-        radius: 2
-      }
-    }
-  },
-  series: [{
-    name: '早早早  160',
-    type: 'surface',
-    parametric: true,
-    wireframe: {
-      show: false
-    },
-    pieData: {
-      name: '早早早',
-      value: 160,
-      startRatio: 0,
-      endRatio: 0.21739130434782608
-    },
-    pieStatus: {
-      selected: false,
-      hovered: false,
-      k: 0.14285714285714285
-    },
-    parametricEquation: {
-      u: {
-        min: -3.141592653589793,
-        max: 9.42477796076938,
-        step: 0.09817477042468103
-      },
-      v: {
-        min: 0,
-        max: 6.283185307179586,
-        step: 0.15707963267948966
-      }
-    }
-  },
-  {
-    name: '中中中  244',
-    type: 'surface',
-    parametric: true,
-    wireframe: {
-      show: false
-    },
-    pieData: {
-      name: '中中中',
-      value: 244,
-      startRatio: 0.21739130434782608,
-      endRatio: 0.5489130434782609
-    },
-    pieStatus: {
-      selected: false,
-      hovered: false,
-      k: 0.14285714285714285
-    },
-    parametricEquation: {
-      u: {
-        min: -3.141592653589793,
-        max: 9.42477796076938,
-        step: 0.09817477042468103
-      },
-      v: {
-        min: 0,
-        max: 6.283185307179586,
-        step: 0.15707963267948966
-      }
-    }
-  },
-  {
-    name: '晚晚晚  332',
-    type: 'surface',
-    parametric: true,
-    wireframe: {
-      show: false
-    },
-    pieData: {
-      name: '晚晚晚',
-      value: 332,
-      startRatio: 0.5489130434782609,
-      endRatio: 1
-    },
-    pieStatus: {
-      selected: false,
-      hovered: false,
-      k: 0.14285714285714285
-    },
-    parametricEquation: {
-      u: {
-        min: -3.141592653589793,
-        max: 9.42477796076938,
-        step: 0.09817477042468103
-      },
-      v: {
-        min: 0,
-        max: 6.283185307179586,
-        step: 0.15707963267948966
-      }
-    }
-  }
-  ]
-}
+// export const chartOpt5 = {
+//   desc: '3d立体饼图',
+//   grid,
+//   color,
+//   barBackground: 'RGBA(235, 238, 245, 0.06)',
+//   backgroundColor: 'transparent',
+//   animation: true,
+//   animationEasing: 'elasticOut',
+//   animationDelayUpdate: (k) => 5 * k,
+//   animationDelay: (idx) => idx * 10,
+//   legend: {
+//     type: 'scroll',
+//     data: [
+//       '早早早  160',
+//       '中中中  244',
+//       '晚晚晚  332'
+//     ],
+//     icon: 'roundRect',
+//     padding: 5,
+//     itemGap: 20,
+//     bottom: 0,
+//     itemWidth: 10,
+//     itemHeight: 10,
+//     selectedMode: true,
+//     textStyle: {
+//       color: '#FFFFFF',
+//       fontSize: 14,
+//       lineHeight: 14,
+//       rich: {
+//         a: {
+//           verticalAlign: 'middle'
+//         }
+//       },
+//       padding: [
+//         0,
+//         0, -3,
+//         0
+//       ]
+//     }
+//   },
+//   tooltip: {},
+//   xAxis3D: {
+//     min: -1,
+//     max: 1
+//   },
+//   yAxis3D: {
+//     min: -1,
+//     max: 1
+//   },
+//   zAxis3D: {
+//     min: -1,
+//     max: 'dataMax'
+//   },
+//   grid3D: {
+//     show: false,
+//     boxHeight: 16,
+//     top: '-18%',
+//     viewControl: {
+//       alpha: 27,
+//       beta: 70,
+//       rotateSensitivity: 1,
+//       zoomSensitivity: 0,
+//       panSensitivity: 0,
+//       distance: 150
+//     },
+//     postEffect: {
+//       enable: false,
+//       bloom: {
+//         enable: true,
+//         bloomIntensity: 0.1
+//       },
+//       SSAO: {
+//         enable: true,
+//         quality: 'medium',
+//         radius: 2
+//       }
+//     }
+//   },
+//   series: [{
+//     name: '早早早  160',
+//     type: 'surface',
+//     parametric: true,
+//     wireframe: {
+//       show: false
+//     },
+//     pieData: {
+//       name: '早早早',
+//       value: 160,
+//       startRatio: 0,
+//       endRatio: 0.21739130434782608
+//     },
+//     pieStatus: {
+//       selected: false,
+//       hovered: false,
+//       k: 0.14285714285714285
+//     },
+//     parametricEquation: {
+//       u: {
+//         min: -3.141592653589793,
+//         max: 9.42477796076938,
+//         step: 0.09817477042468103
+//       },
+//       v: {
+//         min: 0,
+//         max: 6.283185307179586,
+//         step: 0.15707963267948966
+//       }
+//     }
+//   },
+//   {
+//     name: '中中中  244',
+//     type: 'surface',
+//     parametric: true,
+//     wireframe: {
+//       show: false
+//     },
+//     pieData: {
+//       name: '中中中',
+//       value: 244,
+//       startRatio: 0.21739130434782608,
+//       endRatio: 0.5489130434782609
+//     },
+//     pieStatus: {
+//       selected: false,
+//       hovered: false,
+//       k: 0.14285714285714285
+//     },
+//     parametricEquation: {
+//       u: {
+//         min: -3.141592653589793,
+//         max: 9.42477796076938,
+//         step: 0.09817477042468103
+//       },
+//       v: {
+//         min: 0,
+//         max: 6.283185307179586,
+//         step: 0.15707963267948966
+//       }
+//     }
+//   },
+//   {
+//     name: '晚晚晚  332',
+//     type: 'surface',
+//     parametric: true,
+//     wireframe: {
+//       show: false
+//     },
+//     pieData: {
+//       name: '晚晚晚',
+//       value: 332,
+//       startRatio: 0.5489130434782609,
+//       endRatio: 1
+//     },
+//     pieStatus: {
+//       selected: false,
+//       hovered: false,
+//       k: 0.14285714285714285
+//     },
+//     parametricEquation: {
+//       u: {
+//         min: -3.141592653589793,
+//         max: 9.42477796076938,
+//         step: 0.09817477042468103
+//       },
+//       v: {
+//         min: 0,
+//         max: 6.283185307179586,
+//         step: 0.15707963267948966
+//       }
+//     }
+//   }
+//   ]
+// }

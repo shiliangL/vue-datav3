@@ -1,9 +1,14 @@
 <template>
-    <div>
-        dashboard
-
-        <div @click="createPanelWin"> createPanel </div>
+  <div class="dashboard">
+    <div @click="createPanelWin"> createPanel </div>
+    <div class="grid_list">
+      <div
+        class="grid_list_item"
+        :key="item"
+        v-for="item in 1000"
+      > {{  item }} </div>
     </div>
+  </div>
 </template>
 
 <script>
@@ -292,6 +297,23 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+.dashboard {
+  width: 100%;
+}
+.grid_list {
+  --transition35: all 0.35s ease-in-out;
+  width: 100%;
+  display: grid;
+  padding: 20px;
+  overflow: auto;
+  grid-row-gap: 20px;
+  grid-column-gap: 20px;
+  grid-auto-rows: minmax(250px, auto);
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
 
+  .grid_list_item {
+    border: 1px solid #2d3058;
+  }
+}
 </style>
