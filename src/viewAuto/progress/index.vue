@@ -5,9 +5,9 @@
     <button @click="shuffle">shuffle</button>
 
     <TransitionGroup
-      tag="ul"
+      tag="div"
       name="fade"
-      class="container"
+      class="progress_wrapper"
     >
       <div
         v-for="item in items"
@@ -15,7 +15,6 @@
         :key="item.id"
       >
         {{ item.value }}
-        <button @click="remove(item)">x</button>
       </div>
     </TransitionGroup>
   </div>
@@ -25,7 +24,7 @@
 <script>
 
 import { nanoid } from 'nanoid'
-import { ref, defineComponent, TransitionGroup, onUpdated } from 'vue'
+import { ref, defineComponent, TransitionGroup, nextTick } from 'vue'
 
 export default defineComponent({
   components: {
@@ -48,6 +47,10 @@ export default defineComponent({
         id: nanoid(),
         value: Math.round(Math.random() * 1000)
       })
+
+      nextTick(() => {
+        shuffle()
+      })
     }
 
     function reset () {
@@ -55,7 +58,8 @@ export default defineComponent({
     }
 
     function shuffle () {
-      items.value = items.value.slice(0).sort(({ value: a }, { value: b }) => (b - a))
+      // items.value = items.value.slice(0).sort(({ value: a }, { value: b }) => (b - a))
+      items.value = items.value.sort(({ value: a }, { value: b }) => (b - a))
       console.log('items.value', items.value)
     }
 
@@ -66,9 +70,12 @@ export default defineComponent({
       }
     }
 
-    onUpdated(() => {
+    setInterval(() => {
+      items.value.forEach(item => {
+        item.value = Math.round(Math.random() * 500)
+      })
       shuffle()
-    })
+    }, 2500)
 
     return {
       items,
@@ -81,19 +88,22 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
-.container {
-  position: relative;
+<style scoped lang="scss">
+.progress_wrapper {
   padding: 0;
-}
-
-.item {
-  width: 100%;
-  height: 30px;
-  color: #fff;
-  border: 1px solid #666;
-  box-sizing: border-box;
-  background-color: #409eff;
+  position: relative;
+  .item {
+    width: 100%;
+    margin: 4px;
+    padding: 2px;
+    color: #fff;
+    box-sizing: border-box;
+    border: 1px solid #666;
+    box-shadow: 0 0 3px #999;
+    border: 1px solid rgba(225, 225, 225, 0.45);
+    // background: linear-gradient(-90deg, #5071ff, #21cdff);
+    background:  linear-gradient(-90deg, #00fcae, #006388);
+  }
 }
 
 /* 1. 声明过渡效果 */
