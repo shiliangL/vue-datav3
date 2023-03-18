@@ -5,7 +5,6 @@ const { grid, color } = datavOpt
 export const chartOpt1 = {
   desc: '紫橙色渐变折线',
   grid,
-  color,
   barBackground: 'RGBA(235, 238, 245, 0.06)',
   backgroundColor: 'transparent',
   animation: true,
@@ -95,8 +94,7 @@ export const chartOpt1 = {
     axisLabel: {
       show: true,
       color: 'rgba(241, 248, 255, 0.7)',
-      fontSize: 12,
-      margin: 8
+      fontSize: 12
     },
     axisLine: {
       show: false,
@@ -129,8 +127,7 @@ export const chartOpt1 = {
     axisLabel: {
       show: true,
       color: 'rgba(241, 248, 255, 0.7)',
-      fontSize: 12,
-      margin: 8
+      fontSize: 12
     },
     splitLine: {
       show: true,
