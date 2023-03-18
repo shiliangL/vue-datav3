@@ -1,9 +1,8 @@
+@import './animation.scss';
 :root {
     --animate-duration: 400ms;
     --animate-delay: 0.35s;
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-    line-height: 1.5;
-    font-weight: 400;
     color-scheme: light dark;
     font-synthesis: none;
     background-color: #000;

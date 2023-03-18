@@ -1,0 +1,27 @@
+.progress_active {
+    position: relative;
+    overflow: hidden;
+    &:before {
+        height: 100%;
+        content: '';
+        opacity: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #fff;
+        position: absolute;
+        animation: progress_active 2s ease-in-out infinite;
+    }
+}
+
+@keyframes progress_active {
+    0% {
+        opacity: 0.33;
+        width: 0;
+    }
+    100% {
+        opacity: 0;
+        width: 100%;
+    }
+}

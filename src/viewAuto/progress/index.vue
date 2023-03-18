@@ -1,111 +1,74 @@
-<template>
-  <div class="progress_x">
-    <button @click="insert">insert at random index</button>
-    <button @click="reset">reset</button>
-    <button @click="shuffle">shuffle</button>
-
-    <div class="progress">
-      <TransitionGroup
-        tag="div"
-        name="fade"
-        class="progress_wrapper_list"
-      >
-        <div class="progress_wrapper">
-          <div class="progress_title">
-            <div> 智慧城市 </div>
-            <div> 90 </div>
-          </div>
-          <div class="progress_bar decorator2">
-            <div class="progress_bar_out">
-              <div class="progress_bar_inner"></div>
-            </div>
-          </div>
-        </div>
-      </TransitionGroup>
-    </div>
-  </div>
-
-</template>
-
 <script>
 
-import { nanoid } from 'nanoid'
-import { h, ref, defineComponent, TransitionGroup, nextTick } from 'vue'
+import { h, defineComponent } from 'vue'
 
 export default defineComponent({
-  components: {
-    TransitionGroup
+  props: {
+    percentage: {
+      type: [Number],
+      desc: '进度条百分比',
+      default: () => 20
+    },
+    strokeHeight: {
+      type: [Number],
+      desc: '进度条高度',
+      default: () => 10
+    },
+    color: {
+      type: [String],
+      default: () => 'linear-gradient(-90deg, #00fcae, #006388)'
+    },
+    trackColor: {
+      type: [String],
+      desc: '进度条轨道颜色',
+      default: () => '#9d99992b'
+    },
+    active: {
+      type: [Boolean],
+      desc: '是否启用激活效果',
+      default: () => true
+    },
+    showRadius: {
+      type: [Boolean],
+      desc: '是否显示圆角',
+      default: () => true
+    },
+    progressStyle: {
+      type: [Object],
+      desc: '进度条 设置边框 阴影等',
+      default: () => ({
+        boxShadow: '0 0 3px rgba(225, 225, 225, 0.45)',
+        border: '1px solid rgba(225, 225, 225, 0.35)'
+      })
+    }
   },
-  setup () {
-    const items = ref(makeList())
-
-    // const list = this.isSort ? (this.dataList.slice(0).sort(({ value: a }, { value: b }) => (b - a))) : this.dataList
-
-    function makeList (n = 1000) {
-      return new Array(10).fill(0).map(item => ({
-        id: nanoid(),
-        value: Math.round(Math.random() * n)
-      }))
-    }
-
-    function insert () {
-      items.value.unshift({
-        id: nanoid(),
-        value: Math.round(Math.random() * 1000)
-      })
-
-      nextTick(() => {
-        shuffle()
-      })
-    }
-
-    function reset () {
-      items.value = makeList()
-    }
-
-    function shuffle () {
-      // items.value = items.value.slice(0).sort(({ value: a }, { value: b }) => (b - a))
-      items.value = items.value.sort(({ value: a }, { value: b }) => (b - a))
-      console.log('items.value', items.value)
-    }
-
-    function remove (item) {
-      const i = items.value.indexOf(item.id)
-      if (i > -1) {
-        items.value.splice(i, 1)
-      }
-    }
-
-    setInterval(() => {
-      items.value.forEach(item => {
-        item.value = Math.round(Math.random() * 500)
-      })
-      shuffle()
-    }, 2500)
-
-    return {
-      items,
-      insert,
-      reset,
-      shuffle,
-      remove
-    }
+  setup (props, ctx) {
+    return () => h('div', { class: 'progress_wrapper' }, [
+      h('div', { class: 'progress_title' }, [
+        h('div', { class: 'title' }, '智慧城市'),
+        h('div', { class: 'value' }, 3858)
+      ]),
+      h('div', { class: 'progress_bar' }, [
+        h('div', { class: 'progress_bar_out' }, [
+          h('div', { class: 'progress_bar_inner progress_active', style: { width: `${props.percentage}%` } })
+        ])
+      ]),
+      h('div', { class: 'value' }, 3858)
+    ])
   }
 })
 </script>
 
 <style scoped lang="scss">
-.progress {
-  width: 60%;
-}
-
 .progress_wrapper {
   width: 100%;
+  font-size: 14px;
   color: #fff;
   overflow: hidden;
-  padding: 10px 0;
+  padding: 4px 0;
   position: relative;
-  display: inline-block;
+  display: flex;
+  align-items: center;
   box-sizing: border-box;
 
   .progress_title {
@@ -115,6 +78,7 @@ export default defineComponent({
     justify-content: space-between;
   }
   .progress_bar {
+    flex: 1;
     height: 12px;
     padding: 2px;
     border-radius: 5px;
@@ -151,25 +115,5 @@ export default defineComponent({
       }
     }
   }
-}
-
-/* 1. 声明过渡效果 */
-.fade-move,
-.fade-enter-active,
-.fade-leave-active {
-  transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
-}
-
-/* 2. 声明进入和离开的状态 */
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-  transform: scaleY(0.01) translate(30px, 0);
-}
-
-/* 3. 确保离开的项目被移除出了布局流
-以便正确地计算移动时的动画效果。 */
-.fade-leave-active {
-  position: absolute;
 }
 </style>
