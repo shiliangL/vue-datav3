@@ -1,18 +1,14 @@
 <template>
   <div class="datav_list">
-    可视化 ?????
-
     <div class="grid_list">
-      <div class="grid_list_item">
+      <div
+        class="grid_list_item"
+        :key="itemOptName"
+        v-for="itemOptName in chartOptList"
+      >
         <coreChart
-          :option="option"
           class="chart"
-        ></coreChart>
-      </div>
-      <div class="grid_list_item">
-        <coreChart
-          :option="chartOpt2"
-          class="chart"
+          :option="chartOpt[itemOptName]"
         ></coreChart>
       </div>
     </div>
@@ -21,27 +17,25 @@
 
 <script>
 
-import { chartOpt1, chartOpt2 } from '@/chartOpt/line'
-import { defineComponent, ref } from 'vue'
+import * as chartOpt from '@/chartOpt/line'
+import { defineComponent, computed } from 'vue'
 
 export default defineComponent({
   setup () {
-    const option = ref({})
+    const chartOptList = computed(() => {
+      return Object.keys(chartOpt)
+    })
 
-    setTimeout(() => {
-      option.value = chartOpt1
-      console.log(chartOpt1)
-    }, 2500)
+    console.log('chartOptList', chartOptList)
     return {
-      option,
-      chartOpt2
+      chartOpt,
+      chartOptList
     }
   }
 })
 </script>
 
 <style scoped lang="scss">
-
 .grid_list {
   --transition35: all 0.35s ease-in-out;
   display: grid;
@@ -52,8 +46,8 @@ export default defineComponent({
   grid-auto-rows: minmax(250px, auto);
   grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
 
-.grid_list_item {
-  border: 1px solid #7d7d7d;
-}
+  .grid_list_item {
+    border: 1px solid #2d3058;
+  }
 }
 </style>
