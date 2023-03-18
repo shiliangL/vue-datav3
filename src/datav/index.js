@@ -1,6 +1,7 @@
 // 引入自动引入modules中文件
 const files =
     import.meta.globEager('@/datav/*/index.vue')
+    // import.meta.globEager('@/datav/*/*.vue')
 
 const modules = []
 
