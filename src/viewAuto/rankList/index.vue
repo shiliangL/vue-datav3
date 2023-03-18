@@ -68,7 +68,7 @@ export default defineComponent({
         item.value = Math.round(Math.random() * 100)
       })
       shuffle()
-    }, 4500)
+    }, 8600)
 
     return {
       items,
