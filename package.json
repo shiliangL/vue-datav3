@@ -10,6 +10,7 @@
         "lint:create": "eslint --init"
     },
     "dependencies": {
+        "nanoid": "^4.0.1",
         "pinia": "^2.0.33",
         "vue": "^3.2.45",
         "vue-router": "4"
