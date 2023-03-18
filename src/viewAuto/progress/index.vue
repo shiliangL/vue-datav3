@@ -1,22 +1,28 @@
 <template>
-  <div class="progress">
+  <div class="progress_x">
     <button @click="insert">insert at random index</button>
     <button @click="reset">reset</button>
     <button @click="shuffle">shuffle</button>
 
-    <TransitionGroup
-      tag="div"
-      name="fade"
-      class="progress_wrapper"
-    >
-      <div
-        v-for="item in items"
-        class="item"
-        :key="item.id"
+    <div class="progress">
+      <TransitionGroup
+        tag="div"
+        name="fade"
+        class="progress_wrapper_list"
       >
-        {{ item.value }}
-      </div>
-    </TransitionGroup>
+        <div class="progress_wrapper">
+          <div class="progress_title">
+            <div> 智慧城市 </div>
+            <div> 90 </div>
+          </div>
+          <div class="progress_bar decorator2">
+            <div class="progress_bar_out">
+              <div class="progress_bar_inner"></div>
+            </div>
+          </div>
+        </div>
+      </TransitionGroup>
+    </div>
   </div>
 
 </template>
@@ -24,7 +30,7 @@
 <script>
 
 import { nanoid } from 'nanoid'
-import { ref, defineComponent, TransitionGroup, nextTick } from 'vue'
+import { h, ref, defineComponent, TransitionGroup, nextTick } from 'vue'
 
 export default defineComponent({
   components: {
@@ -89,20 +95,61 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
+.progress {
+  width: 60%;
+}
+
 .progress_wrapper {
-  padding: 0;
+  width: 100%;
+  color: #fff;
+  overflow: hidden;
+  padding: 10px 0;
   position: relative;
-  .item {
-    width: 100%;
-    margin: 4px;
+  display: inline-block;
+  box-sizing: border-box;
+
+  .progress_title {
+    display: flex;
+    padding: 0 4px;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+  .progress_bar {
+    height: 12px;
     padding: 2px;
-    color: #fff;
-    box-sizing: border-box;
-    border: 1px solid #666;
+    border-radius: 5px;
+    position: relative;
     box-shadow: 0 0 3px #999;
     border: 1px solid rgba(225, 225, 225, 0.45);
-    // background: linear-gradient(-90deg, #5071ff, #21cdff);
-    background:  linear-gradient(-90deg, #00fcae, #006388);
+    .progress_bar_out {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      position: relative;
+      .progress_bar_inner {
+        width: 30%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        position: absolute;
+        border-radius: 5px;
+        transition: all 0.6s ease;
+        background: linear-gradient(-90deg, #00fcae, #006388);
+      }
+    }
+
+    &.decorator {
+      &::after {
+        left: 30%;
+        top: 50%;
+        content: "";
+        width: 4px;
+        height: 160%;
+        position: absolute;
+        transform: translateY(-50%);
+        background: linear-gradient(0deg, #00fcae, #006388);
+      }
+    }
   }
 }
 
@@ -121,7 +168,7 @@ export default defineComponent({
 }
 
 /* 3. 确保离开的项目被移除出了布局流
-      以便正确地计算移动时的动画效果。 */
+以便正确地计算移动时的动画效果。 */
 .fade-leave-active {
   position: absolute;
 }
