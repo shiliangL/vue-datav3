@@ -10,7 +10,7 @@
   </nav>
 </template>
 
-<script lang="ts">
+<script>
 
 import { useRouter, useRoute } from 'vue-router'
 import { defineComponent } from 'vue'
@@ -20,11 +20,16 @@ export default defineComponent({
     const router = useRouter()
     const route = useRoute()
 
-    console.log('VueRouter', router, route)
+    console.log(router, route)
+
+    const list = router.options.routes.find(item => item.path === '/viewAuto')
+    const viewAuto = list ? list.children.map(item => ({ title: item.name, path: '/viewAuto/' + item.path })) : []
+
     const navigation = [
       { title: 'dashboard', path: '/' },
       { title: 'chart', path: '/component/chart' },
-      { title: 'datav', path: '/component/datav' }
+      { title: 'datav', path: '/component/datav' },
+      ...viewAuto
     ]
     return {
       navigation
@@ -36,6 +41,13 @@ export default defineComponent({
 <style scoped lang="scss">
 .navigation_bar {
   margin: 10px 20px;
+}
+
+.router-link-active,
+.router-link-exact-active{
+  button{
+    background-color: #fc2f70;
+  }
 }
 
 button {

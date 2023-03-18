@@ -7,7 +7,7 @@ const Layout = () =>
 
 const routes = [
   // redirect: { name: 'homepage' }
-  { path: '/', redirect: '/dashboard' },
+  // { path: '/', redirect: '/dashboard' },
   {
     path: '/',
     component: Layout,
@@ -20,6 +20,8 @@ const routes = [
         import('@/views/dashboard/index.vue')
     }]
   },
+  // TODO: 自动装载的路由
+  AutoRouter,
   {
     path: '/component',
     component: Layout,
@@ -40,8 +42,6 @@ const routes = [
     }
     ]
   },
-  // TODO: 自动装载的路由
-  // AutoRouter,
   {
     path: '/login',
     name: 'login',
