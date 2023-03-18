@@ -45,8 +45,8 @@ export default defineComponent({
   setup (props, ctx) {
     return () => h('div', { class: 'progress_wrapper' }, [
       h('div', { class: 'progress_title' }, [
-        h('div', { class: 'title' }, '智慧城市'),
-        h('div', { class: 'value' }, 3858)
+        h('div', { class: 'title' }, '智慧城市')
+        // h('div', { class: 'value' }, 3858)
       ]),
       h('div', { class: 'progress_bar' }, [
         h('div', { class: 'progress_bar_out' }, [
@@ -81,6 +81,7 @@ export default defineComponent({
     flex: 1;
     height: 12px;
     padding: 2px;
+    margin: 0 4px;
     border-radius: 5px;
     position: relative;
     box-shadow: 0 0 3px #999;

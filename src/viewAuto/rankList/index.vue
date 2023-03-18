@@ -83,6 +83,10 @@ export default defineComponent({
 
 <style scoped lang="scss">
 
+.rank_list_wrapper{
+  width: 360px!important;
+}
+
 /* 1. 声明过渡效果 */
 .fade-move,
 .fade-enter-active,

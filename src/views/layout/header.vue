@@ -40,7 +40,7 @@ export default defineComponent({
 
 <style scoped lang="scss">
 .navigation_bar {
-  margin: 10px 20px;
+  margin: 10px 10px;
 }
 
 .router-link-active,
