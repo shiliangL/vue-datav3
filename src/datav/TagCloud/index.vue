@@ -37,11 +37,12 @@ export default defineComponent({
 
     function clickTagItem ({ target }) {
       const { className, dataset } = target
-      if (className === 'tagcloud--item') emit('click', { ...dataset })
+      if (className === 'tagcloud--item') {
+        emit('clickRow', { ...dataset })
+      }
     }
 
     onMounted(() => {
-      console.log('ref', ref)
       init(refElement.value)
       useEventListener(refElement.value, 'click', (e) => clickTagItem(e))
     })
