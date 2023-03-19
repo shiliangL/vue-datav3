@@ -1,9 +1,5 @@
 <template>
   <div>
-    网格布局
-    <div class="TagCloud">
-      <TagCloud></TagCloud>
-    </div>
     <div class="grid">
       <gridPanel
         :column="2"
