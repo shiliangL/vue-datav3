@@ -814,6 +814,11 @@
   "resolved" "https://registry.npmmirror.com/convert-source-map/-/convert-source-map-1.9.0.tgz"
   "version" "1.9.0"
 
+"countup.js@^2.6.0":
+  "integrity" "sha512-GeORCrCcaFUHP3RNf0/dWK+XQX+fsdtrMO31mNvsbKXNNG+DMTcgZ4dWpIG9BnOS8t5+iJbaRXgaaG9oLs0N4g=="
+  "resolved" "https://registry.npmmirror.com/countup.js/-/countup.js-2.6.0.tgz"
+  "version" "2.6.0"
+
 "cross-spawn@^7.0.2":
   "integrity" "sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w=="
   "resolved" "https://registry.npmmirror.com/cross-spawn/-/cross-spawn-7.0.3.tgz"

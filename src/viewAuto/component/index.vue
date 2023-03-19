@@ -17,10 +17,15 @@
 <script>
 
 import { defineComponent } from 'vue'
+
+import Count2 from '@/datav/Count2/index.vue'
 import ScanningCard from './Scanning.vue'
+
 import DatavCard01 from './DatavCard01.vue'
 import DatavCard02 from './DatavCard02.vue'
 import DatavCard03 from './DatavCard03.vue'
+import DatavCard04 from './DatavCard04.vue'
+
 import Decorator01 from './Decorator01.vue'
 import Decorator02 from './Decorator02.vue'
 import Decorator03 from './Decorator03.vue'
@@ -28,16 +33,19 @@ import Decorator04 from './Decorator04.vue'
 import Decorator05 from './Decorator05.vue'
 import Decorator06 from './Decorator06.vue'
 import Decorator07 from './Decorator07.vue'
+import Decorator08 from './Decorator08.vue'
 
 export default defineComponent({
   setup () {
     console.log('Decorator07', Decorator07)
     const cardList = [
+      Count2,
       ScanningCard,
 
       DatavCard01,
       DatavCard02,
       DatavCard03,
+      DatavCard04,
 
       Decorator01,
       Decorator02,
@@ -45,7 +53,8 @@ export default defineComponent({
       Decorator04,
       Decorator05,
       Decorator06,
-      Decorator07
+      Decorator07,
+      Decorator08
     ]
     return {
       cardList
