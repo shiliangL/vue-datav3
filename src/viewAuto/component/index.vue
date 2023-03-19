@@ -24,6 +24,7 @@ import Decorator02 from './Decorator02.vue'
 import Decorator03 from './Decorator03.vue'
 import Decorator04 from './Decorator04.vue'
 import Decorator05 from './Decorator05.vue'
+import Decorator06 from './Decorator06.vue'
 
 export default defineComponent({
   setup () {
@@ -34,7 +35,8 @@ export default defineComponent({
       Decorator02,
       Decorator03,
       Decorator04,
-      Decorator05
+      Decorator05,
+      Decorator06
     ]
     return {
       cardList

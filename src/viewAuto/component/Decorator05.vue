@@ -83,7 +83,7 @@ button {
   }
 
   70% {
-    box-shadow: 0 0 0 16px rgb(218 103 68 / 0%);
+    box-shadow: 0 0 0 14px rgb(218 103 68 / 0%);
   }
 
   100% {
