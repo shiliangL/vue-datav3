@@ -16,6 +16,10 @@
         </div>
       </recycleScroller>
     </div>
+
+    <div class="swiperCard">
+      <SwiperCard></SwiperCard>
+    </div>
   </div>
 </template>
 
@@ -47,7 +51,7 @@ export default defineComponent({
 
 <style scoped lang="scss">
 .RecycleScroller {
-  height: 300px;
+  height: 200px;
   overflow: auto;
   border: 1px solid #eee;
 
@@ -60,5 +64,10 @@ export default defineComponent({
     display: flex;
     justify-content: space-between;
   }
+}
+
+.swiperCard{
+  height: 450px;
+  overflow: hidden;
 }
 </style>
