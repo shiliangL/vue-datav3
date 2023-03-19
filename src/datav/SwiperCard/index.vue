@@ -77,6 +77,12 @@ export default defineComponent({
         spaceBetween: 30,
         effect: 'fade',
         loop: true,
+        // autoplay: true, // 等同于以下设置
+        autoplay: {
+          delay: 5000,
+          stopOnLastSlide: false,
+          disableOnInteraction: true
+        },
         mousewheel: {
           invert: false
         },
