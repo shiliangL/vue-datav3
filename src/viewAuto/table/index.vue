@@ -18,6 +18,10 @@
     </div>
 
     <div class="swiperCard">
+      <WaterChart></WaterChart>
+    </div>
+
+    <div class="swiperCard">
       <SwiperCard></SwiperCard>
     </div>
   </div>

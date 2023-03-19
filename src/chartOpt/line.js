@@ -1472,6 +1472,131 @@ export const chartOpt4 = {
   ]
 }
 
+export const chartOpt5 = {
+  animationEasing: 'elasticOut',
+  angleAxis: {
+    min: 0,
+    max: 100,
+    show: false,
+    polarIndex: 0,
+    boundaryGap: [
+      '50%',
+      '50%'
+    ],
+    startAngle: 90
+  },
+  radiusAxis: {
+    type: 'category',
+    show: false,
+    axisLabel: {
+      show: false
+    },
+    axisLine: {
+      show: false
+    },
+    axisTick: {
+      show: false
+    }
+  },
+  polar: [{
+    radius: [
+      '76%',
+      '82%'
+    ],
+    center: [
+      '50%',
+      '50%'
+    ]
+  }],
+  xAxis: {
+    show: false,
+    type: 'value'
+  },
+  yAxis: [{
+    show: false,
+    type: 'category'
+  }],
+  series: [{
+    name: '',
+    type: 'bar',
+    data: [
+      100
+    ],
+    roundCap: true,
+    showBackground: true,
+    backgroundStyle: {
+      color: 'RGBA(235, 238, 245, 0.16)'
+    },
+    coordinateSystem: 'polar',
+    itemStyle: {
+      color: {
+        type: 'linear',
+        x: 0,
+        y: 0,
+        x2: 0,
+        y2: 1,
+        colorStops: [{
+          offset: 0,
+          color: '#00ffff'
+        },
+        {
+          offset: 1,
+          color: '#006ced'
+        }
+        ]
+      }
+    }
+  },
+  {
+    radius: '75%',
+    type: 'liquidFill',
+    center: [
+      '50%',
+      '50%'
+    ],
+    itemStyle: {
+      color: {
+        type: 'linear',
+        x: 0,
+        y: 0,
+        x2: 0,
+        y2: 1,
+        colorStops: [{
+          offset: 0,
+          color: '#00ffff'
+        },
+        {
+          offset: 1,
+          color: '#006ced'
+        }
+        ]
+      }
+    },
+    label: {
+      show: false
+    },
+    data: [
+      0.45,
+      {
+        direction: 'left',
+        value: 0.45
+      }
+    ],
+    backgroundStyle: {
+      borderWidth: 1,
+      color: 'transparent'
+    },
+    outline: {
+      show: true,
+      itemStyle: {
+        borderWidth: 0
+      },
+      borderDistance: 0
+    }
+  }
+  ]
+}
+
 // export const chartOpt5 = {
 //   desc: '3d立体饼图',
 //   grid,
