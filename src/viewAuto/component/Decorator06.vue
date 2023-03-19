@@ -18,10 +18,10 @@ export default Decorator06
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  border: 4px solid rgba(255, 255, 255, 0.1);
-  -webkit-mask: linear-gradient(rgba(24, 24, 24, 0.2), rgba(24, 24, 24,0.9) 90%);
   transform-origin: 50% 60%;
-  transform: perspective(200px) rotateX(66deg);
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  transform: perspective(200px) rotateX(72deg);
+  -webkit-mask: linear-gradient(rgba(24, 24, 24, 0.2), rgba(24, 24, 24,0.9) 90%);
 }
 
 .loader:before, .loader:after {

@@ -6,7 +6,7 @@
         <div class="template_img_wrap">
           <component :is="item" />
           <div class="template_badge">
-            <span>企业版</span>
+            <span> 开发版 </span>
           </div>
         </div>
       </div>
@@ -19,24 +19,33 @@
 import { defineComponent } from 'vue'
 import ScanningCard from './Scanning.vue'
 import DatavCard01 from './DatavCard01.vue'
+import DatavCard02 from './DatavCard02.vue'
+import DatavCard03 from './DatavCard03.vue'
 import Decorator01 from './Decorator01.vue'
 import Decorator02 from './Decorator02.vue'
 import Decorator03 from './Decorator03.vue'
 import Decorator04 from './Decorator04.vue'
 import Decorator05 from './Decorator05.vue'
 import Decorator06 from './Decorator06.vue'
+import Decorator07 from './Decorator07.vue'
 
 export default defineComponent({
   setup () {
+    console.log('Decorator07', Decorator07)
     const cardList = [
       ScanningCard,
+
       DatavCard01,
+      DatavCard02,
+      DatavCard03,
+
       Decorator01,
       Decorator02,
       Decorator03,
       Decorator04,
       Decorator05,
-      Decorator06
+      Decorator06,
+      Decorator07
     ]
     return {
       cardList

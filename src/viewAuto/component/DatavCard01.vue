@@ -40,12 +40,12 @@ export default defineComponent({
   position: absolute;
   content: "";
   right: -10px;
-  bottom: 18px;
+  bottom: 17px;
   width: 0;
   height: 0;
   border-left: 0px solid transparent;
   border-right: 10px solid transparent;
-  border-bottom: 10px solid #1a044e;
+  border-bottom: 10px solid #24616e;
 }
 
 .subscribe p {
@@ -76,7 +76,6 @@ export default defineComponent({
 
 .subscribe .submit-btn {
   position: absolute;
-  border-radius: 30px;
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
   color: #fff;
