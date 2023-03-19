@@ -32,7 +32,7 @@ export default defineComponent({
         text: item,
         color: randomDarkRgbColor()
       }))
-      Cloud(container, list || [], {})
+      Cloud(container, list || [], { maxSpeed: 'slow' })
     }
 
     function clickTagItem ({ target }) {
