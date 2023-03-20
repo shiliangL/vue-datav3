@@ -129,19 +129,19 @@ export default defineComponent({
 
       // 颜色判断 多颜色渲染渐变颜色
       const itemStyleGradientColor =
-          props.color.length === 1
-            ? color1
-            : {
-                type: 'linear',
-                x: 0,
-                y: 0,
-                x2: 0,
-                y2: 1,
-                colorStops: [
-                  { offset: 0, color: color1 },
-                  { offset: 1, color: color2 }
-                ]
-              }
+        props.color.length === 1
+          ? color1
+          : {
+              type: 'linear',
+              x: 0,
+              y: 0,
+              x2: 0,
+              y2: 1,
+              colorStops: [
+                { offset: 0, color: color1 },
+                { offset: 1, color: color2 }
+              ]
+            }
 
       const r1 = props.radius[0].replaceAll('%', ' ') * 1
       const r2 = `${r1 - props.fixDiff}%`
@@ -190,6 +190,7 @@ export default defineComponent({
           borderDistance: 0
         }
       }
+
       if (props.showWater) initOption.series.push(waterConfig)
       // WARNING: 这里处理一下数据配置的合并
       return initOption
@@ -206,7 +207,7 @@ export default defineComponent({
       h(CoreChart, {
         option: generateOption()
       }, {
-        default: () => h('div', {}, [
+        default: () => h('div', { class: 'chart_desc' }, [
           h(Count2, {}, '90%'),
           h('div', {}, '完成情况')
         ])
@@ -216,9 +217,17 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
-.WaterChart{
+<style scoped lang="scss">
+.WaterChart {
   width: 100%;
   height: 100%;
+  .chart_desc {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 </style>

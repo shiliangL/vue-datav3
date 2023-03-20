@@ -102,7 +102,6 @@ export default defineComponent({
         background: linear-gradient(-90deg, #00fcae, #006388);
       }
     }
-
     &.decorator {
       &::after {
         left: 30%;

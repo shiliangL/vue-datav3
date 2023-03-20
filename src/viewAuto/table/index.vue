@@ -21,6 +21,10 @@
       <WaterChart></WaterChart>
     </div>
 
+    <div class="WaterChart">
+      <CapsuleBar></CapsuleBar>
+    </div>
+
     <div class="swiperCard">
       <SwiperCard></SwiperCard>
     </div>
