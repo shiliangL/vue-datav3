@@ -15,10 +15,11 @@
 <script>
 
 import { nanoid } from 'nanoid'
-import ProgressItem from '../progress/index.vue'
+import ProgressItem from '@/datav/ProgressBar/index.vue'
 import { ref, defineComponent, TransitionGroup, nextTick } from 'vue'
 
 export default defineComponent({
+  name: 'RankList',
   components: {
     ProgressItem,
     TransitionGroup

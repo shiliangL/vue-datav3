@@ -3,6 +3,7 @@
 import { h, defineComponent } from 'vue'
 
 export default defineComponent({
+  name: 'ProgressBar',
   props: {
     percentage: {
       type: [Number],

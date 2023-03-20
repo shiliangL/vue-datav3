@@ -1,7 +1,6 @@
 <template>
   <div>
     表格
-
     <div class="RecycleScroller">
       <recycleScroller
         class="scroller"
