@@ -1,6 +1,10 @@
 <template>
   <div>
     表格应用
+
+    <div class="WaterChart">
+      <WaterChart></WaterChart>
+    </div>
   </div>
 </template>
 
@@ -15,4 +19,8 @@ export default defineComponent({
 </script>
 
 <style scoped>
+.WaterChart{
+  height: 220px;
+  width: 360px;
+}
 </style>

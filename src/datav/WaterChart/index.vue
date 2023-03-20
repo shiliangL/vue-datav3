@@ -1,9 +1,15 @@
 <script>
 
+import Count2 from '@/datav/Count2/index.vue'
+import CoreChart from '@/datav/CoreChart/index.vue'
 import { h, defineComponent, reactive, watch } from 'vue'
 
 export default defineComponent({
   name: 'WaterChart',
+  components: {
+    Count2,
+    CoreChart
+  },
   props: {
     chartData: {
       type: Number,
@@ -196,11 +202,23 @@ export default defineComponent({
       chartOptionConfig.opt = generateOption(newVal[0], newVal[1] || {})
     }, { deep: true })
 
-    return () => h('div')
+    return () => h('div', { class: 'WaterChart' }, [
+      h(CoreChart, {
+        option: generateOption()
+      }, {
+        default: () => h('div', {}, [
+          h(Count2, {}, '90%'),
+          h('div', {}, '完成情况')
+        ])
+      })
+    ])
   }
 })
 </script>
 
 <style scoped>
-
+.WaterChart{
+  width: 100%;
+  height: 100%;
+}
 </style>

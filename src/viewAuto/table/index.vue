@@ -17,7 +17,7 @@
       </recycleScroller>
     </div>
 
-    <div class="swiperCard">
+    <div class="WaterChart">
       <WaterChart></WaterChart>
     </div>
 
@@ -73,5 +73,10 @@ export default defineComponent({
 .swiperCard{
   height: 450px;
   overflow: hidden;
+}
+
+.WaterChart{
+  height: 220px;
+  width: 360px;
 }
 </style>
