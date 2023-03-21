@@ -1,10 +1,10 @@
 
 <script>
 
+import { hexToRgba } from '@/chartOpt/index'
 import Count2 from '@/datav/Count2/index.vue'
 import CoreChart from '@/datav/CoreChart/index.vue'
-
-import { h, ref, defineComponent, onMounted, onBeforeUnmount, watch } from 'vue'
+import { h, defineComponent } from 'vue'
 
 export default defineComponent({
   name: 'PieChart',
@@ -21,8 +21,7 @@ export default defineComponent({
         '#04e893',
         '#ffe000',
         '#73c0de',
-        '#F84949',
-        'rgba(250,250,250,0.5)'
+        '#F84949'
       ]
       const option = {
         animation: true,
@@ -51,12 +50,29 @@ export default defineComponent({
           },
           icon: 'roundRect'
         },
-        color: colors,
+        color: colors.map(item => ({
+          type: 'linear',
+          x: 0,
+          y: 0,
+          x2: 1,
+          y2: 1,
+          global: false,
+          colorStops: [
+            {
+              offset: 0,
+              color: hexToRgba(item, 0.66)
+            },
+            {
+              offset: 1,
+              color: hexToRgba(item, 1)
+            }
+          ]
+        })),
         series: [
           // 边框的设置
           {
             type: 'pie',
-            radius: ['62%', '86%'],
+            radius: ['86%', '88%'],
             center: ['50%', '50%'],
             label: {
               show: false
@@ -74,11 +90,17 @@ export default defineComponent({
                 type: 'linear',
                 x: 0,
                 y: 0,
-                x2: 0,
+                x2: 1,
                 y2: 1,
                 colorStops: [
-                  { offset: 0, color: '#00ffff' },
-                  { offset: 1, color: '#006ced' }
+                  {
+                    offset: 0,
+                    color: hexToRgba('#ffe000', 0.22)
+                  },
+                  {
+                    offset: 1,
+                    color: hexToRgba('#006ced', 0.88)
+                  }
                 ]
               }
             },
@@ -90,11 +112,7 @@ export default defineComponent({
             radius: ['62%', '82%'],
             center: ['50%', '50%'],
             itemStyle: {
-              normal: {
-                color: (params) => {
-                  return colors[params.dataIndex]
-                }
-              }
+
             },
             labelLine: {
               show: false
@@ -121,10 +139,10 @@ export default defineComponent({
       h(CoreChart, {
         option: opt()
       }, {
-        default: () => h('div', {}, [
+        default: () => [
           h(Count2),
           h('div', {}, '汇总情况')
-        ])
+        ]
       })
     ])
   }
@@ -136,5 +154,13 @@ export default defineComponent({
   width: 100%;
   height: 100%;
   position: relative;
+  .chart_desc {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 </style>

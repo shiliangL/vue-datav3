@@ -207,10 +207,10 @@ export default defineComponent({
       h(CoreChart, {
         option: generateOption()
       }, {
-        default: () => h('div', { class: 'chart_desc' }, [
+        default: () => [
           h(Count2, {}, '90%'),
           h('div', {}, '完成情况')
-        ])
+        ]
       })
     ])
   }
@@ -221,13 +221,5 @@ export default defineComponent({
 .WaterChart {
   width: 100%;
   height: 100%;
-  .chart_desc {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-  }
 }
 </style>
