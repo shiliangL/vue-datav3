@@ -99,12 +99,15 @@ export default defineComponent({
   .core_chart {
     width: 100%;
     height: 100%;
+    z-index: 3;
   }
   .decorator_chart {
     width: 100%;
     height: 100%;
+    z-index: 2;
   }
   .center_slot {
+    z-index: 1;
     width: 100%;
     height: 100%;
     display: flex;

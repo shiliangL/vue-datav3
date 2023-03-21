@@ -37,7 +37,6 @@
 import 'vue-virtual-scroller/dist/vue-virtual-scroller.css'
 import { RecycleScroller } from 'vue-virtual-scroller'
 import { randomDarkRgbColor } from '@/chartOpt/index'
-// import gridPanel from '@/datav/gridPanel/index.vue'
 import { defineComponent } from 'vue'
 
 export default defineComponent({

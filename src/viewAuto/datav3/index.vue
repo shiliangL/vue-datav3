@@ -1,15 +1,19 @@
 <template>
   <div>
 
-    <div class="WaterChart">
+    <div class="DatavChart">
+      <PieChart></PieChart>
+    </div>
+
+    <div class="DatavChart">
       <WaterChart></WaterChart>
     </div>
 
-    <div class="WaterChart">
+    <div class="DatavChart">
       <CapsuleBar></CapsuleBar>
     </div>
 
-    <div class="swiperCard">
+    <div class="SwiperCard">
       <SwiperCard></SwiperCard>
     </div>
   </div>
@@ -29,29 +33,13 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-.RecycleScroller {
-  height: 200px;
-  overflow: auto;
-  border: 1px solid #eee;
-
-  .scroller {
-    height: 100%;
-  }
-
-  .user {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-  }
-}
-
-.swiperCard{
-  height: 450px;
+.SwiperCard{
+  height: 340px;
   overflow: hidden;
 }
 
-.WaterChart{
-  height: 220px;
+.DatavChart{
+  height: 180px;
   width: 360px;
 }
 </style>
