@@ -78,6 +78,7 @@ export default defineComponent({
 
 <style scoped lang="scss">
 .capsule_bar {
+  width: 100%;
   .capsule_bar_title {
     display: flex;
     align-items: baseline;

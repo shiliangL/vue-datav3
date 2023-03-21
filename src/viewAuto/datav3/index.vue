@@ -17,7 +17,10 @@
         <RankList></RankList>
       </div>
       <div class="grid_item">
-        <CapsuleBar class="w100p"></CapsuleBar>
+        <CapsuleBar></CapsuleBar>
+      </div>
+      <div class="grid_item">
+        <DisplayPanel></DisplayPanel>
       </div>
       <!-- <div class="SwiperCard">
         <SwiperCard></SwiperCard>

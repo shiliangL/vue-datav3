@@ -20,6 +20,10 @@ export default defineComponent({
       type: Number,
       default: 2040
     },
+    unit: {
+      type: [Number, String, Function],
+      default: ''
+    },
     duration: {
       type: Number,
       default: 1500
@@ -63,7 +67,7 @@ export default defineComponent({
       default: 'linear'
     }
   },
-  setup (props, { emit, expose }) {
+  setup (props, { emit, expose, slots }) {
     const targetRef = ref(null)
     let showActiveTimer = null
     let count2 = null
@@ -129,13 +133,21 @@ export default defineComponent({
       update
     })
 
-    return () => h('span', { class: 'count2', ref: targetRef })
+    return () => h('span', { class: 'number_value' }, [
+      h('span', { class: 'prefix' }),
+      h('span', { class: 'count2', ref: targetRef }),
+      h('span', { class: 'unit' }, props.unit)
+    ])
   }
 
 })
 </script>
 
 <style scoped lang="scss">
+.number_value{
+  display: flex;
+  align-items: baseline;
+}
 .count2 {
   font-family: fantasy;
   font-size: 32px;

@@ -35,7 +35,7 @@ export default defineComponent({
       tag: 'div',
       name: 'fade',
       class: 'rank_list_wrapper'
-    }, [
+    }, () => [
       dataList.value.map(item => {
         return h(ProgressBar, { key: item.id, percentage: item.value })
       })
