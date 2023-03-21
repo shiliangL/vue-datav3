@@ -15,7 +15,7 @@ export default defineComponent({
     }
   },
   setup (props, { expose, slots }) {
-    function opt () {
+    function generateOpt () {
       const colors = [
         '#006ced',
         '#04e893',
@@ -140,7 +140,7 @@ export default defineComponent({
       class: 'pieChart'
     }, [
       h(CoreChart, {
-        option: opt()
+        option: generateOpt()
       }, {
         default: () => [
           h(Count2),

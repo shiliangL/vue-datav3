@@ -6,13 +6,13 @@ import { hexToRgba } from '@/chartOpt/index'
 import CoreChart from '@/datav/CoreChart/index.vue'
 import { h, defineComponent } from 'vue'
 export default defineComponent({
-  name: 'LineChart',
+  name: 'BarChart',
   setup () {
     function generateOpt () {
 
     }
     return () => h('div', {
-      class: 'lineChart'
+      class: 'barChart'
     }, [
       h(CoreChart, {
         option: generateOpt()
@@ -23,7 +23,7 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.lineChart {
+.barChart {
   width: 100%;
   height: 100%;
 }
