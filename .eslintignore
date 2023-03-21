@@ -1,5 +1,6 @@
 
 *.sh
+*.py
 node_modules
 *.md
 *.woff

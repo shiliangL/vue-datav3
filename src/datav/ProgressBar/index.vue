@@ -93,10 +93,10 @@ export default defineComponent({
       overflow: hidden;
       position: relative;
       .progress_bar_inner {
-        width: 30%;
-        height: 100%;
         top: 0;
         left: 0;
+        width: 30%;
+        height: 100%;
         position: absolute;
         border-radius: 5px;
         transition: all 0.6s ease;

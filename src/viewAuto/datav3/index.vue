@@ -14,7 +14,10 @@
         <BarChart></BarChart>
       </div>
       <div class="grid_item">
-        <CapsuleBar></CapsuleBar>
+        <RankList></RankList>
+      </div>
+      <div class="grid_item">
+        <CapsuleBar class="w100p"></CapsuleBar>
       </div>
       <!-- <div class="SwiperCard">
         <SwiperCard></SwiperCard>
@@ -44,13 +47,17 @@ export default defineComponent({
   overflow: auto;
   grid-row-gap: 10px;
   grid-column-gap: 10px;
-  grid-auto-rows: minmax(210px, auto);
+  grid-auto-rows: minmax(220px, auto);
   grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
   .grid_item {
+    padding: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     border: 1px solid #2d3058;
+  }
+  .w100p{
+    width: 100%;
   }
 }
 </style>
