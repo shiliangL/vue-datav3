@@ -5,6 +5,9 @@
         <PieChart></PieChart>
       </div>
       <div class="grid_item">
+        <PieChartMix></PieChartMix>
+      </div>
+      <div class="grid_item">
         <WaterChart></WaterChart>
       </div>
       <div class="grid_item">
