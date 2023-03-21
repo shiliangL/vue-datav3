@@ -106,6 +106,42 @@ export default defineComponent({
             },
             data: [{ value: 1 }]
           },
+          {
+            type: 'pie',
+            radius: ['58%', '60%'],
+            center: ['50%', '50%'],
+            label: {
+              show: false
+            },
+            labelLine: {
+              show: false
+            },
+            tooltip: {
+              show: false
+            },
+            itemStyle: {
+              // color: 'RGBA(235, 238, 245, 0.06)'
+              opacity: 0.78,
+              color: {
+                type: 'linear',
+                x: 0,
+                y: 0,
+                x2: 1,
+                y2: 1,
+                colorStops: [
+                  {
+                    offset: 0,
+                    color: hexToRgba('#ffe000', 0.22)
+                  },
+                  {
+                    offset: 1,
+                    color: hexToRgba('#006ced', 0.88)
+                  }
+                ]
+              }
+            },
+            data: [{ value: 1 }]
+          },
           // 主要展示层的
           {
             type: 'pie',
