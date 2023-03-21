@@ -23,26 +23,6 @@ const routes = [
   // TODO: 自动装载的路由
   AutoRouter,
   {
-    path: '/component',
-    component: Layout,
-    redirect: '/component/chart',
-    children: [{
-      path: 'chart',
-      name: 'chart',
-      meta: { title: 'chart', hideTabs: false },
-      component: () =>
-        import('@/views/component/chart/index.vue')
-    },
-    {
-      path: 'datav',
-      name: 'datav',
-      meta: { title: 'datav', hideTabs: false },
-      component: () =>
-        import('@/views/component/datav/index.vue')
-    }
-    ]
-  },
-  {
     path: '/login',
     name: 'login',
     meta: { title: 'login', hideTabs: false },

@@ -27,8 +27,6 @@ export default defineComponent({
 
     const navigation = [
       { title: 'dashboard', path: '/' },
-      { title: 'chart', path: '/component/chart' },
-      { title: 'datav', path: '/component/datav' },
       ...viewAuto
     ]
     return {
