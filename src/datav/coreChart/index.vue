@@ -12,7 +12,7 @@ export default defineComponent({
       default: () => ({})
     }
   },
-  setup (props, { expose, slots }) {
+  setup (props, { expose, slots, emit }) {
     const chartRef = ref(null)
     const { echarts } = window
     if (!echarts) return
@@ -21,6 +21,7 @@ export default defineComponent({
     function initChart (dom, option) {
       const _chart = echarts.init(dom, null, {})
       _chart.setOption(option)
+      emit('ready', _chart)
       return _chart
     }
 

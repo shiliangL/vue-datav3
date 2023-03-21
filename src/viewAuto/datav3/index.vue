@@ -25,6 +25,9 @@
       <div class="grid_item">
         <DisplayPanel></DisplayPanel>
       </div>
+      <div class="grid_item">
+        <DisplayPanel2></DisplayPanel2>
+      </div>
       <!-- <div class="SwiperCard">
         <SwiperCard></SwiperCard>
       </div> -->

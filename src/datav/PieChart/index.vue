@@ -15,6 +15,8 @@ export default defineComponent({
     }
   },
   setup (props, { expose, slots }) {
+    let autoPlayTimer = null
+
     function generateOpt () {
       const colors = [
         '#006ced',
@@ -172,11 +174,28 @@ export default defineComponent({
 
       return option
     }
+
+    function chartReady (chart) {
+      let currentIndex = -1
+      clearInterval(autoPlayTimer)
+      autoPlayTimer = setInterval(() => {
+        const dataLen = 5
+        chart.dispatchAction({ type: 'downplay', seriesIndex: 2, dataIndex: currentIndex })
+        currentIndex = (currentIndex + 1) % dataLen
+        chart && chart.dispatchAction({
+          seriesIndex: 2,
+          type: 'highlight',
+          dataIndex: currentIndex
+        })
+      }, 5200)
+    }
+
     return () => h('div', {
       class: 'pieChart'
     }, [
       h(CoreChart, {
-        option: generateOpt()
+        option: generateOpt(),
+        onReady: (e) => chartReady(e)
       }, {
         default: () => [
           h(Count2),
