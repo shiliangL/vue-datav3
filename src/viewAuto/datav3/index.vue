@@ -1,20 +1,24 @@
 <template>
-  <div>
-
-    <div class="DatavChart">
-      <PieChart></PieChart>
-    </div>
-
-    <div class="DatavChart">
-      <WaterChart></WaterChart>
-    </div>
-
-    <div class="DatavChart">
-      <CapsuleBar></CapsuleBar>
-    </div>
-
-    <div class="SwiperCard">
-      <SwiperCard></SwiperCard>
+  <div class="datav3_chart">
+    <div class="datav3_chart_grid">
+      <div class="grid_item">
+        <PieChart></PieChart>
+      </div>
+      <div class="grid_item">
+        <WaterChart></WaterChart>
+      </div>
+      <div class="grid_item">
+        <LineChart></LineChart>
+      </div>
+      <div class="grid_item">
+        <BarChart></BarChart>
+      </div>
+      <div class="grid_item">
+        <CapsuleBar></CapsuleBar>
+      </div>
+      <!-- <div class="SwiperCard">
+        <SwiperCard></SwiperCard>
+      </div> -->
     </div>
   </div>
 </template>
@@ -33,13 +37,21 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-.SwiperCard{
-  height: 340px;
-  overflow: hidden;
-}
-
-.DatavChart{
-  height: 180px;
-  width: 360px;
+.datav3_chart_grid {
+  --transition35: all 0.35s ease-in-out;
+  display: grid;
+  width: 100%;
+  padding: 10px;
+  overflow: auto;
+  grid-row-gap: 10px;
+  grid-column-gap: 10px;
+  grid-auto-rows: minmax(210px, auto);
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  .grid_item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #2d3058;
+  }
 }
 </style>
