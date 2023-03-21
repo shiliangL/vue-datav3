@@ -1,5 +1,21 @@
 <template>
-  <div>
+  <div class="experiment">
+
+    <div class="RecycleScroller">
+      <recycleScroller
+        class="scroller"
+        :items="list"
+        :item-size="32"
+        key-field="id"
+        v-slot="{ item }"
+        ref="recycleScrollerRef"
+      >
+        <div class="user">
+          {{ item.name }} {{ item.id }}
+        </div>
+      </recycleScroller>
+    </div>
+
     <div class="grid">
       <gridPanel
         :column="2"
@@ -18,13 +34,15 @@
 
 <script>
 
+import 'vue-virtual-scroller/dist/vue-virtual-scroller.css'
+import { RecycleScroller } from 'vue-virtual-scroller'
 import { randomDarkRgbColor } from '@/chartOpt/index'
 // import gridPanel from '@/datav/gridPanel/index.vue'
 import { defineComponent } from 'vue'
 
 export default defineComponent({
   components: {
-    // gridPanel
+    RecycleScroller
   },
   setup () {
     const list = new Array(10).fill(0).map(item => randomDarkRgbColor())
