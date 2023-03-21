@@ -40,7 +40,6 @@ export default defineComponent({
 .datav3_chart_grid {
   --transition35: all 0.35s ease-in-out;
   display: grid;
-  width: 100%;
   padding: 10px;
   overflow: auto;
   grid-row-gap: 10px;
