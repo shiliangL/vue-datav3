@@ -73,11 +73,7 @@ export default defineComponent({
       h('div', {
         class: 'decorator_chart abs'
       }),
-      slots.default
-        ? h('div', {
-          class: 'center_slot abs'
-        }, slots.default())
-        : null
+      slots.default ? h('div', { class: 'center_slot abs' }, slots.default()) : null
     ])
   }
 })
