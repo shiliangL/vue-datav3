@@ -112,7 +112,10 @@ export default defineComponent({
             radius: ['62%', '82%'],
             center: ['50%', '50%'],
             itemStyle: {
-
+              borderRadius: 3,
+              borderWidth: 1.1,
+              borderCap: 'round',
+              borderColor: 'rgba(0,0,0,0.78)'
             },
             labelLine: {
               show: false
