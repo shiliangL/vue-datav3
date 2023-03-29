@@ -2,7 +2,11 @@
   <div class="component_dev">
     <div> 组件调试 </div>
     <div class="app_grid_card_list">
-      <div class="grid_card_list_item" v-for="(item) in cardList" :key="item.__scopeId">
+      <div
+        class="grid_card_list_item"
+        v-for="(item) in cardList"
+        :key="item.__scopeId"
+      >
         <div class="template_img_wrap">
           <component :is="item" />
           <div class="template_badge">
@@ -34,6 +38,7 @@ import Decorator05 from './Decorator05.vue'
 import Decorator06 from './Decorator06.vue'
 import Decorator07 from './Decorator07.vue'
 import Decorator08 from './Decorator08.vue'
+import Decorator09 from './Decorator09.vue'
 
 export default defineComponent({
   setup () {
@@ -54,7 +59,8 @@ export default defineComponent({
       Decorator05,
       Decorator06,
       Decorator07,
-      Decorator08
+      Decorator08,
+      Decorator09
     ]
     return {
       cardList
@@ -64,7 +70,6 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-
 .app_grid_card_list {
   --transition35: all 0.35s ease-in-out;
   display: grid;
