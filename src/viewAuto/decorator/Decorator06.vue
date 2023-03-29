@@ -1,13 +1,20 @@
+
 <script>
-import { h } from 'vue'
 
-const Decorator06 = (props, context) => {
-  return h('div', { class: 'loader' })
-}
+import { h, defineComponent } from 'vue'
 
-export default Decorator06
-
+export default defineComponent({
+  // eslint-disable-next-line vue/multi-word-component-names
+  name: 'Decorator06',
+  setup () {
+    return () => h('div', { class: 'loader' })
+  }
+})
 </script>
+
+<style scoped>
+
+</style>
 
 <style scoped lang="scss">
 .loader {

@@ -10,7 +10,7 @@
         <div class="template_img_wrap">
           <component :is="item" />
           <div class="template_badge">
-            <span> 开发版 </span>
+            <span> {{  item.name }} </span>
           </div>
         </div>
       </div>
@@ -39,6 +39,9 @@ import Decorator06 from './Decorator06.vue'
 import Decorator07 from './Decorator07.vue'
 import Decorator08 from './Decorator08.vue'
 import Decorator09 from './Decorator09.vue'
+import Decorator10 from './Decorator10.vue'
+import Decorator11 from './Decorator11.vue'
+import Decorator12 from './Decorator12.vue'
 
 export default defineComponent({
   setup () {
@@ -60,7 +63,10 @@ export default defineComponent({
       Decorator06,
       Decorator07,
       Decorator08,
-      Decorator09
+      Decorator09,
+      Decorator10,
+      Decorator11,
+      Decorator12
     ]
     return {
       cardList
@@ -105,34 +111,12 @@ export default defineComponent({
         transition: var(--transition35);
       }
 
-      .template_img_hover {
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        transition: var(--transition25);
-        .preview_btn {
-          color: #fff;
-          border-radius: 2px;
-          padding: 6px 54px;
-          transform: scale(0);
-          transition: var(--transition35);
-          background: linear-gradient(
-            -90deg,
-            rgba(0, 210, 255, 0.8),
-            rgba(58, 76, 254, 0.8)
-          );
-        }
-      }
-
       .template_badge {
         color: #fff;
         top: 6px;
         right: 6px;
-        width: 58px;
-        height: 22px;
         font-size: 12px;
+        padding: 4px 6px;
         display: flex;
         position: absolute;
         border-radius: 2px;
@@ -148,16 +132,6 @@ export default defineComponent({
     }
 
     &:hover {
-      .template_img_hover {
-        background-color: rgba(0, 0, 0, 0.55);
-      }
-      .template_img_wrap {
-        .template_img_hover {
-          .preview_btn {
-            transform: scale(1);
-          }
-        }
-      }
       border: 1px solid rgba(58, 76, 254, 0.88);
     }
   }

@@ -1,22 +1,10 @@
 <template>
-  <div class="list grow-melt middle-stagger">
-    <div class="list-item"></div>
-    <div class="list-item"></div>
-    <div class="list-item"></div>
-    <div class="list-item"></div>
-    <div class="list-item"></div>
-    <div class="list-item"></div>
-    <div class="list-item"></div>
-    <div class="list-item"></div>
-    <div class="list-item"></div>
-    <div class="list-item"></div>
-    <div class="list-item"></div>
-    <div class="list-item"></div>
-    <div class="list-item"></div>
-    <div class="list-item"></div>
-    <div class="list-item"></div>
-    <div class="list-item"></div>
-  </div>
+  <section class="decorator09">
+    <div class="out_box"></div>
+    <div style="--d: 0.2s" class="inner_box_circle" />
+    <div style="--d: 1.2s" class="inner_box_circle" />
+    <div style="--d: 2.2s" class="inner_box_circle" />
+  </section>
 </template>
 
 <script>
@@ -24,7 +12,7 @@ import { defineComponent } from 'vue'
 
 export default defineComponent({
   // eslint-disable-next-line vue/multi-word-component-names
-  name: 'Decorator07',
+  name: 'Decorator09',
   setup () {
     return {}
   }
@@ -32,84 +20,109 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
-// 绝对值
-@function abs($v) {
-  @return max(#{$v}, calc(-1 * #{$v}));
-}
+.decorator09 {
+  --color: #ffe000;
+  --lineColor: rgba(102, 163, 224, 0.2);
 
-// 中位数
-@function middle($v) {
-  @return calc(0.5 * (#{$v} - 1));
-}
+  width: 200px;
+  height: 200px;
+  position: relative;
 
-// 数轴上两点距离
-@function dist-1d($v1, $v2) {
-  $v-delta: calc(#{$v1} - #{$v2});
-  @return #{abs($v-delta)};
-}
-
-.list {
-  --n: 16;
-  display: flex;
-  flex-wrap: wrap;
-  --blue-color-1: #6ee1f5;
-  justify-content: space-evenly;
-
-  &-item {
-    --p: 2vw;
-    --gap: 1vw;
-    --bg: var(--blue-color-1);
-
-    @for $i from 1 through 16 {
-      &:nth-child(#{$i}) {
-        --i: #{$i - 1};
-      }
-    }
-    padding: var(--p);
-    margin: var(--gap);
-    box-shadow: inset 0 0 0 var(--p) var(--bg);
-  }
-
-  &.grow-melt {
-    .list-item {
-      --t: 2s;
-      animation-name: grow, melt;
-      animation-duration: var(--t);
-      animation-iteration-count: infinite;
-    }
-  }
-
-  &.middle-stagger {
-    .list-item {
-      --m: #{middle(var(--n))}; // 中位数，这里是7.5
-      --i-m-dist: #{dist-1d(var(--i), var(--m))}; // 计算每个id到中位数之间的距离
-      --ratio: calc(var(--i-m-dist) / var(--m)); // 根据距离算出比例
-      --delay: calc(var(--ratio) * var(--t)); // 根据比例算出delay
-      --n-delay: calc((var(--ratio) - 2) * var(--t)); // 负delay表示动画提前开始
-      animation-delay: var(--n-delay);
-    }
+  &::before {
+    content: "";
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    border-radius: 100%;
+    top: 50%;
+    left: 50%;
+    margin-top: -5px;
+    margin-left: -5px;
+    border-top: 1px solid orange;
+    animation: turn 1s infinite linear;
+    filter: drop-shadow(0 0 2px var(--color)) drop-shadow(0 0 5px var(--color))
+      drop-shadow(0 0 10px var(--color)) drop-shadow(0 0 20px var(--color));
   }
 }
 
-@keyframes grow {
-  0% {
-    transform: scale(0);
-  }
+.out_box,
+.out_box::after,
+.out_box::before {
+  border-radius: 50%;
+  border: 2px solid var(--lineColor);
+  border-left: 2px solid var(--color);
+  border-right: 2px solid var(--color);
+}
 
-  50%,
+.out_box::after,
+.out_box::before {
+  content: "";
+  left: 50%;
+  top: 50%;
+  position: absolute;
+}
+
+.out_box {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  transform-origin: 50% 50%;
+  animation: turn 1s linear infinite;
+}
+
+.out_box::before {
+  width: 180px;
+  height: 180px;
+  margin-top: -90px;
+  margin-left: -90px;
+  /* 伪元素将继承父元素的动画，设置动画reverse，反向变换，可实现木有动画的效果,或重写动画效果 */
+  animation: turn2 1.25s linear infinite;
+}
+
+.out_box::after {
+  width: 160px;
+  height: 160px;
+  margin-top: -80px;
+  margin-left: -80px;
+  animation: turn 1.5s linear infinite;
+}
+
+.inner_box_circle {
+  left: 50%;
+  top: 50%;
+  opacity: 0.9;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+  transform-origin: 50% 50%;
+  border: 2px solid var(--color);
+  transform: translate(-50%, -50%);
+  animation: rotate 3s linear infinite;
+}
+
+.inner_box_circle {
+  animation-delay: var(--d);
+}
+
+@keyframes turn {
   100% {
-    transform: scale(1);
+    transform: rotateZ(-1turn);
   }
 }
 
-@keyframes melt {
-  0%,
-  50% {
-    box-shadow: inset 0 0 0 var(--p) var(--bg);
-  }
-
+@keyframes turn2 {
   100% {
-    box-shadow: inset 0 0 0 0 var(--bg);
+    transform: rotateZ(1turn);
+  }
+}
+
+@keyframes rotate {
+  100% {
+    border: none;
+    border-top: 2px solid var(--color);
+    border-bottom: 2px solid var(--color);
+    transform: translate(-50%, -50%) rotate3d(0.5, 0.5, 0.5, -720deg);
   }
 }
 </style>
