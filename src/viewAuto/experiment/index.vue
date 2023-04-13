@@ -96,8 +96,8 @@ export default defineComponent({
 .datav_card_list_01 {
   width: 328px;
   height: 88px;
-  background: rgba(24, 76, 120, 0.5);
   border: 1px solid;
+  background: rgba(24, 76, 120, 0.5);
   border-image: linear-gradient(
       0deg,
       rgba(0, 213, 255, 0.45),
