@@ -53,7 +53,8 @@ export default defineComponent({
     transform: skewX(-45deg);
     transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
     background: linear-gradient(to right, transparent 10px, var(--bg) 0) 0 0/20px,
-      linear-gradient(to right, orange, orange) 0 0 / var(--per) no-repeat #eee;
+      // linear-gradient(to right, orange, orange) 0 0 / var(--per) no-repeat #eee;
+      linear-gradient(to top right, #039be5, #29b6f6);
   }
   span {
     padding-left: 20px;
