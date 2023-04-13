@@ -1,6 +1,5 @@
 
 <script>
-
 import { hexToRgba } from '@/chartOpt/index'
 import Count2 from '@/datav/Count2/index.vue'
 import CoreChart from '@/datav/CoreChart/index.vue'
@@ -18,13 +17,7 @@ export default defineComponent({
     let autoPlayTimer = null
 
     function generateOpt () {
-      const colors = [
-        '#006ced',
-        '#04e893',
-        '#ffe000',
-        '#73c0de',
-        '#F84949'
-      ]
+      const colors = ['#006ced', '#04e893', '#ffe000', '#73c0de', '#F84949']
       const option = {
         animation: true,
         backgroundColor: 'transparent',
@@ -52,7 +45,7 @@ export default defineComponent({
           },
           icon: 'roundRect'
         },
-        color: colors.map(item => ({
+        color: colors.map((item) => ({
           type: 'linear',
           x: 0,
           y: 0,
@@ -180,45 +173,73 @@ export default defineComponent({
       clearInterval(autoPlayTimer)
       autoPlayTimer = setInterval(() => {
         const dataLen = 5
-        chart.dispatchAction({ type: 'downplay', seriesIndex: 2, dataIndex: currentIndex })
-        currentIndex = (currentIndex + 1) % dataLen
-        chart && chart.dispatchAction({
+        chart.dispatchAction({
+          type: 'downplay',
           seriesIndex: 2,
-          type: 'highlight',
           dataIndex: currentIndex
         })
+        currentIndex = (currentIndex + 1) % dataLen
+        chart &&
+          chart.dispatchAction({
+            seriesIndex: 2,
+            type: 'highlight',
+            dataIndex: currentIndex
+          })
       }, 5200)
     }
 
-    return () => h('div', {
-      class: 'pieChart'
-    }, [
-      h(CoreChart, {
-        option: generateOpt(),
-        onReady: (e) => chartReady(e)
-      }, {
-        default: () => [
-          h(Count2),
-          h('div', {}, '汇总情况')
-        ]
-      })
+    return () => h('div', { class: 'pie_chart' }, [
+
+      h('div', { class: 'chart_legend' }, [
+        h('div', { class: 'legend_item' }, '智慧城市'),
+        h('div', { class: 'legend_item' }, '智慧城市'),
+        h('div', { class: 'legend_item' }, '智慧城市'),
+        h('div', { class: 'legend_item' }, '智慧城市')
+      ]),
+
+      ('div', { class: 'chart_canvas' }, [
+        h(
+          CoreChart,
+          {
+            option: generateOpt(),
+            onReady: (e) => chartReady(e)
+          },
+          {
+            default: () => [h(Count2), h('div', {}, '汇总情况')]
+          }
+        )
+      ])
     ])
   }
 })
 </script>
 
 <style scoped lang="scss">
-.pieChart {
+.pie_chart {
   width: 100%;
   height: 100%;
-  position: relative;
-  .chart_desc {
-    width: 100%;
-    height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  .chart_legend {
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
+  }
+
+  .chart_canvas {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    .chart_desc {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+    }
   }
 }
 </style>
