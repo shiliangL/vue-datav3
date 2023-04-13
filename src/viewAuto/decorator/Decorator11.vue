@@ -1,10 +1,5 @@
 <template>
   <section class="decorator11">
-    <div
-      class="progress"
-      :style="{ '--per': `${percentage}%` }"
-    ></div>
-    <span id="span"></span>
   </section>
 </template>
 
@@ -46,19 +41,22 @@ export default defineComponent({
 
 <style scoped lang="scss">
 .decorator11 {
-  --bg: #222;
-  .progress {
-    width: 350px;
-    height: 30px;
-    transform: skewX(-45deg);
-    transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
-    background: linear-gradient(to right, transparent 10px, var(--bg) 0) 0 0/20px,
-      linear-gradient(to right, orange, orange) 0 0 / var(--per) no-repeat #eee;
+  width: 60px;
+  height: 60px;
+  background-size: 100%;
+  animation: rotate 0.5s infinite steps(24, end);
+  background-repeat: no-repeat;
+  background-position: center top;
+  // background-image: url('./imgs/ani_big_data.png');
+  background-image: url('./imgs/ani_middleware.png');
+}
+
+@keyframes rotate {
+  0% {
+    background-position: 0px -1440px;
   }
-  span {
-    padding-left: 20px;
-    font-size: 30px;
-    font-weight: bold;
+  100% {
+    background-position: 0px 0px;
   }
 }
 </style>
